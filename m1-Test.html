@@ -1,7 +1,7 @@
 <html>
     
 
-        HTML EXERCISES
+        <!-- HTML EXERCISES
 
         1) Create a title for the page
         <head><title>"Insert title here"</title></head>
@@ -129,30 +129,118 @@
 
         JS EXERCISES
 
-        21) Given variable x = "John" and y = "Doe", write on the console log "John <> Doe"
-        22) Create an object with properties such name, surname, email
-        23) Delete Email from the previously created object
-        24) Create an array with 10 strings in it
-        25) Print in the console every string in the previous array
-        26) Create an array with 100 random numbers in it
-        27) Wrote a function to get the MAX and the MIN from the previously created array
-        28) Create an array of arrays, in which every array has 10 random numbers
-        29) Create a function that gets 2 arrays and returns the longest one
-        30) Create a function that gets 2 arrays of numbers and returns the one with the higher sum of values
+        <script>
+        //21) Given variable x = "John" and y = "Doe", write on the console log "John <> Doe"
+            const x = "John"
+            const y = "Doe"
+            console.log(`${x} <> ${y}`)
+        //22) Create an object with properties such name, surname, email
+            const objMe = {
+                name: "Andi"
+                surname: "Baskara"
+                email: bskr26@gmx.de
+            }
+        //23) Delete Email from the previously created object
+            delete objMe.email
+        //24) Create an array with 10 strings in it
+        const arr = ["eins", "Zwei", "Drei", "Vier", "Fünf", "Sechs", "Sieben", "Acht", "Neun", "Zehn"]
+        //25) Print in the console every string in the previous array
+            for (let i = 0; i < arr.length; i++){
+                console.log(arr[i])
+            }
+        //26) Create an array with 100 random numbers in it
+        let arr1 = []
+            for (let i = 0; i < 100; i++){
+                arr1.push(Math.floor(Math.random() * 100 - 1))
+            }
+        console.log(arr1)
+        //27) Wrote a function to get the MAX and the MIN from the previously created array
+        function getMaxAndMin () {
+            console.log(`Max Number: ${Math.max(...arr1)}`)
+            console.log(`Min Number: ${Math.min(...arr1)}`)
+            
+        }
+        getMaxAndMin()
+        //28) Create an array of arrays, in which every array has 10 random numbers
+        let arrMain = []
+        let arr2 = []
+        let arr3 = []
+            for (let i = 0; i < 10; i++){
+                arr2.push(Math.floor(Math.random() * 50 - 1))
+                arr3.push(Math.floor(Math.random() * 50 - 1))
+                arrMain.push(arr2)
+                arrMain.push(arr3)
+            }
+            console.log(arrMain)
+        //29) Create a function that gets 2 arrays and returns the longest one
+        let arr4 = [1, 2, 3, 4, 5]
+        let arr5 = [0, 1, 2, 3, 4, 5, 6]
+        function retrunLongerLength () {
+            if (arr4.length > arr5.length) {
+            return arr4
+        } else {
+            return arr5
+        }
+        }
 
-        DOM 
+        console.log(retrunLongerLength())
+        //30) Create a function that gets 2 arrays of numbers and returns the one with the higher sum of values
+        function returnHigherSum () {
+            if (arr4.reduce() > arr5.reduce()){
+                return arr4.reduce()
+            } else {
+                return arr5.reduce()
+            }
+        }
 
-        31) Get element with ID "container" from the page
-        32) Get every "td" from the page
-        33) Create a cycle that prints the text inside every td of the page
-        34) Write a function to change the heading of the page
-        35) Write a function to add an extra row to the table
-        36) Write a function to add the class "test" to each row in the table
-        37) Write a function to add a red background to every link in the page
-        38) Console log "Page loaded" when the page is correctly loaded
-        39) Write a function to add new items to a UL
-        40) Write a function to empty a list
+        console.log(returnHigherSum())
+        
 
+        //DOM 
+
+        //31) Get element with ID "container" from the page
+        const getById = document.getElementById("nameOfTheIdInTheHtml")
+        //32) Get every "td" from the page
+        const getByTagName = document.getElementsByTagName("td")
+        //33) Create a cycle that prints the text inside every td of the page
+        getByTagName.innerText = "Print this text in every td"
+        //34) Write a function to change the heading of the page
+        const heading1 = document.getElementsByTagName("h1")
+        //35) Write a function to add an extra row to the table
+        const getTheTrFirst = document.getElementsByTagName("tr")
+        const thenCreateTheTd = document.createElement("td")
+        thenCreateTheTd.innerText = "Text for the new td"
+        getTheTrFirst.appendChild(thenCreateTheTd)
+        //36) Write a function to add the class "test" to each row in the table
+        function addClassToTd (){
+            thenCreateTheTd.setAttribute("class", "class-for-td")
+        }
+        addClassToTd()
+        //37) Write a function to add a red background to every link in the page
+        function addColorToBackground () {
+        const getTheBody = document.querySelector("Body")
+        getTheBody.style.backgoundColor = "red"
+        }
+        //38) Console log "Page loaded" when the page is correctly loaded
+        window.onload(){
+            console.log("Page Loaded")
+        }
+        //39) Write a function to add new items to a UL
+        function addNewItemToUl(textInputHere){
+            const getTheUlFromFakeId = document.getElementById("unordneredList")
+            const createANewItem = document.createElement("li")
+            createANewItem.innerText = textInputHere
+            getTheUlFromFakeId.appendChild(createANewItem)
+        }
+
+        addColorToBackground("This string should be the text of the new item")
+        //40) Write a function to empty a list
+        function emptyTheList () {
+            const getTheLists = document.querySelector("ul>li")
+            getTheLists.remove()
+            console.log("The list is emptied")
+        }
+        </script> -->
         EXTRA 
 
         41) Add an eventListener to alert when the mouse is over a link, displaying the URL
